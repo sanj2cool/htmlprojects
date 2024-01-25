@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+
+            --color: #c4c1c3;
+  --background-off: #767576;
+  --background-on: #b3e82a ;
+  --light-color: red;
+  --time: 0.3s;
+            appearance: none;
+            width:11em;
+            border-radius: 100em;
+            aspect-ratio: 11 /3 ;
+            background-color: #76757a;
+            background-image: linear-gradient(#0001, #0000), 
+            linear-gradient(90deg, #b3e82a 50%, #767576 0);
+            
+           box-shadow: inset 0 0.05em 0.25em #0008,
+                        inset 0 0.5em 0.5em #0004,
+                        0 -0.1em 0.15em 0.075em #0006,
+                        0 0.1em 0.15em 0.075em #fffc;
+                        
+                        
+     
+
+        }
+
+        .btn::before {
+    
+    content: "";
+    top: 0;
+    left: 0.5%;
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    border-radius: 100em;
+    transition: left var(--time) linear, box-shadow var(--time) linear;
+    padding: 0.875em 2em;
+    box-sizing: border-box;
+    display: inline-block;
+    background:
+    radial-gradient(circle at 50% 50%, green 24%, red 0);
+   
+  }
+
+
+  .grd  {
+
+
+    width:600px;
+    height:600px;
+display: block;
+background:#ccc;
+background: radial-gradient( circle at 50% 50% , red 30% ,green 50%) 50% 50% / 50% 50%  content-box;
+
+  }
+
+ 
+
+    </style>
+</head>
+<body>
+    
+
+    <!-- <input type="checkbox" class="btn" role="button">  -->
+
+
+    <div class="grd">
+
+
+    </div>
+</body>
+</html>

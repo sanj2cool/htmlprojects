@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+      
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #efe1e1;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+
+
+        }
+        .flaps {
+            width:100%;
+            height:33.3%;
+            display: flex;
+            gap:20px;
+            justify-content: space-between;
+
+            position: relative;
+
+        }
+        .orange {
+            background: orange;
+        }
+
+        .white {
+            background: #fff;
+        }
+
+        .green {
+            background: green;
+        }
+        .flaps span:nth-child(even) {
+            bottom:30px;
+           
+        }
+        .flaps span {
+            width: 30px;
+            height:70px;
+            background: #fff;
+            display: inline-block;
+            border-radius: 50%;
+             filter: blur(8px);
+             position: absolute;
+           
+             animation: clouds 10s linear infinite;
+             animation-delay: calc(var(--a) * -0.5s); 
+        }
+
+        @keyframes clouds {
+            
+            0% {
+                transform: translateX(0px) scaleX(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(100px) scaleX(3);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(200px) scaleX(5);
+                opacity: 0;
+            }
+        }
+   
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="flaps orange"></div>
+        <div class="flaps white">
+            <span></span>
+         
+
+        </div>
+        <div class="flaps green"></div>
+
+        
+    </div>
+
+<script>
+
+    var oflap=document.querySelector('.orange');
+
+  
+
+    for( i=0; i < 10; i++ ) {
+        let x = Math.floor(Math.random() * 4);
+        oflap.innerHTML += "<span style='--a:"+x+"; left: "+ i* 10 +"%; '></span>";
+        console.log(i);
+    }
+
+
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+       
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(red 50%, yellow 8%);
+
+        }
+
+        body.clicked {
+            background: linear-gradient(rgb(0, 233, 254) 50%, rgb(200, 255, 0) 8%);
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: repeating-conic-gradient(from var(--a), rgb(71, 8, 245) 0%, rgb(254, 4, 120) 10%, rgb(3, 225, 250) 10%, rgb(4, 253, 220) 80%,rgb(253, 254, 253) 100%);
+            border-radius: 50%;
+
+           animation:mvs 60s linear infinite;
+        }
+
+        @property --a {
+            syntax:'<angle>';
+            inherits:false;
+            initial-value: 0deg;
+        }
+
+        @keyframes mvs {
+            0% {
+                --a:0deg;
+            }
+            100% {
+                --a:360deg;
+            }
+        }
+   
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <span>fsdfs</span>
+
+
+    </div>
+
+    <script>
+
+         name='sanjay kumar';
+
+        function aniket() {
+             name='aniket';
+        }
+       
+
+        console.log(name);
+
+        aniket();
+        console.log(name);
+
+        var crc=document.querySelector('.container');
+        var bdy=document.querySelector('body');
+
+            crc.onclick= function() {
+               bdy.classList.add('clicked');
+            }
+        console.log(crc);
+        
+    </script>
+
+</body>
+
+</html>

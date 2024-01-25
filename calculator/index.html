@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calulator</title>
+
+    <style>
+         * {
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+
+        body
+         {
+            width: 100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width:300px;
+            height:610px;
+            aspect-ratio: 6 /1 ;
+            border: 1px solid #ccc;
+            background: #000;
+            border-radius: 50px;
+            box-shadow: inset 0 0.05em .5em #b8b5b5,
+                           
+                            0 0.05em .5em #d9d6d6;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            width:100%;
+            height: 100%;
+            align-items: center;
+            justify-content: end;
+            padding:15px;
+            gap:20px;
+            padding-bottom:50px;
+
+        }
+        .col1 {
+            width:100%;
+
+        }
+        .result {
+            width:100%;
+            height:70px;
+            box-shadow: inset 10px 0.05em .75em red,
+            inset 10px 0.5em .5em blue;
+                           
+        }
+        .controls {
+            width:100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            
+            gap:5px;
+            align-items: baseline;
+        }
+        .controls button {
+            width: 23%;
+            aspect-ratio: 1 /1;
+            border-radius: 50%;
+        }
+        button[data-value='0'] {
+            width:46%;
+            aspect-ratio: 2 /  1;
+            border-radius:50px;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+
+   
+    <div class="container">
+
+       <div class="wrapper">
+
+            <div class="col1">
+                <audio id="sound" src="btn.wav"></audio>
+                
+                <input type="text" id="result" class="result">
+            </div>
+
+            <div class="col2 controls">
+
+                <button>C</button>
+                <button>DEL</button>
+                <button>%</button>
+                <button>/</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>*</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>+</button>
+                <button data-value="0">0</button>
+                <button>.</button>
+                <button>=</button>
+
+
+            </div>
+
+
+       </div> 
+
+    </div>
+
+    <script>
+    var result=document.getElementById('result');
+   var controls=  document.querySelectorAll('.controls button');
+   function clear() {
+    result.value='';
+   }
+   controls.forEach(
+    function(e) {
+        e.addEventListener('click', function(){
+            document.getElementById('sound').play();    
+            let vl=e.innerHTML;
+            
+                
+            switch(vl) {
+                case 'C': 
+                clear();
+                break;
+                case 'DEL':
+                let rs=result.value;
+
+                rs=rs.slice(0, rs.length-1);
+                result.value=rs;
+                //console.log(rs.length);
+
+                //console.log(rs.slice(0, rs.length-1));
+
+                break;
+
+                case '=': 
+                let ss=eval(result.value);
+                console.log(ss);
+                break;
+
+                    default:
+                       result.value+=vl;
+                        break;
+            }
+                
+
+        });
+    }
+   );
+
+   
+
+    </script>
+</body>
+</html>

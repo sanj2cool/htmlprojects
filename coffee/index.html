@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        :root {
+
+            --container: rgb(38, 255, 5);
+
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #efe1e1;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: #515151;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .cup-wrapper {
+            width:210px;
+            height:250px;
+            background: var(--container);
+            border-radius: 0 0 45% 45%;
+            position: relative;
+
+            animation: colorchange 15s ease-in-out infinite;
+
+        }
+
+        @keyframes colorchange {
+
+            0% {
+                background: yellow;
+            }
+            50% {
+                background: skyblue;
+            }
+
+            100% {
+                background: pink;
+            }
+            
+        }
+        .cup-wrapper:before {
+            content:"";
+            width:300px;
+            height:150px;
+            background: gray;
+            display: block;
+            border-radius: 50%;
+            position:absolute;
+            bottom:-60px;
+            left:-40px;
+            z-index: -2;
+
+        }
+
+        .cup-wrapper:after {
+            content:"";
+            width:270px;
+            height:130px;
+            background: rgb(111, 103, 103);
+            display: block;
+            border-radius: 50%;
+            position:absolute;
+            bottom:-50px;
+            left:-25px;
+            z-index: -2;
+
+        }
+        .cup-outer {
+        height: 70px;
+        width:100%;
+        background:#ccc;
+        border-radius: 50%;
+        position: absolute;
+        top:-35px;
+    }
+
+    .coffee {
+        width:calc(100% - 20px);
+        height:50px;
+        background: rgba(220, 122, 10, 0.87);
+        border-radius: 50%;
+        position: absolute;
+        left:10px;
+        top:10px;
+        
+
+
+    }
+.handle {
+
+    width:100px;
+    height:130px;
+    
+    position: absolute;
+    right:-60px;
+    top:50px;
+    border-radius: 0px 70% 70% 0px;
+    border:15px solid gray;
+    z-index: -3;
+
+}
+.vapor {
+    display: flex;
+    gap:5px;
+
+}
+.vapor span 
+{
+    height:100px; 
+    width:10px;
+    background:rgb(255, 255, 255);
+    display: block;
+    border-radius: 80%;
+
+    animation: vap 5s linear infinite;
+ 
+    filter: blur(8px);
+    opacity: 0;
+    animation-delay: calc(var(--a) * -0.5s); 
+    
+}
+
+@keyframes vap {
+
+    0% {
+        transform: translateY(0px)   ;
+        opacity: 0;
+        background: var(--clr);
+    }
+    50%{
+        transform: translateY(-150px) scalex(5)  ;
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-300px) scalex(10) ;
+        opacity: 1;
+    }
+    
+}
+   
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="cup-wrapper">
+            <div class="cup-outer">
+            <div class="coffee">
+                <div class="vapor">
+
+                    <span></span>
+
+                    <span style="--a:1;--clr:green;"></span>
+                    <span style="--a:5;--clr:pink;"></span>
+                    <span style="--a:3;"></span>
+
+                    <span style="--a:2;"></span>
+                    <span style="--a:4;"></span>
+                    <span style="--a:6;"></span>
+                    <span style="--a:8;"></span>
+                    <span style="--a:10;"></span>
+                    <span style="--a:7;"></span>
+                    <span style="--a:11;--clr:red;"></span>
+                    <span style="--a:9;"></span>
+
+                 
+
+                </div>
+
+                <div class="handle">
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
