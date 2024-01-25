@@ -1,128 +1,94 @@
-<style>
-    #calculator {
-  width: 200px;
-  margin: 0 auto;
-  font-family: sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
 
-#display {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 10px;
-  text-align: right;
-  font-size: 1.5em;
-}
 
-#buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-}
+        span {
+            width:100px;
+            height:100px;
+            background: #fb0101;
+            margin:10px;
+            display: block;
+        }
 
-#buttons button {
-  height: 40px;
-  font-size: 1.2em;
-}
-</style>
+        .green {
+            background: green;
+        }
 
-<div id="calculator">
-    <input type="text" id="display" readonly>
-    <div id="buttons">
-        <button>C</button>
-        <button>DEL</button>
-        <button>%</button>
-        <button>/</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>*</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>-</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>+</button>
-        <button data-value="0">0</button>
-        <button>.</button>
-        <button>=</button>
+        .yellow {
+            background: yellow;
+        }
+
+        .black {
+            background: black;
+        }
+    
+    </style>
+</head>
+<body>
+    
+   
+    
+    
+    
+    
+    <div>
+    
+    
+        <span class="red"> red </span><span class="green">green</span><span class="black">black</span><span class="yellow">yellow</span>
+    
     </div>
-  </div>
 
-  <script>
-    const display = document.getElementById('display');
-const buttons = Array.from(document.getElementsByTagName('button'));
+    <script>
+ /**
+        var spans=document.querySelectorAll('span');
 
-let currentNumber = '';
-let previousNumber = '';
-let operation = null;
+       for(i=0; i < spans.length; i++) {
+         console.log(i)
+       }
 
-const clearDisplay = () => {
-  currentNumber = '';
-  previousNumber = '';
-  operation = null;
-  display.value = '';
-};
+       var one=document.querySelector('.red');
 
-const appendNumber = (number) => {
-  currentNumber += number;
-  display.value = currentNumber;
-};
+       one.addEventListener('click',function(){
+        alert(one.innerHTML);
+       })
 
-const performOperation = () => {
-  const num1 = parseFloat(previousNumber);
-  const num2 = parseFloat(currentNumber);
-  let result;
+       var two=document.querySelector('.green');
 
-  switch (operation) {
-    case '+':
-      result = num1 + num2;
-      break;
-    case '-':
-      result = num1 - num2;
-      break;
-    case '*':
-      result = num1 * num2;
-      break;
-    case '/':
-      result = num1 / num2;
-      break;
-    default:
-      return;
-  }
+       two.addEventListener('click',function(){
+        alert(two.innerHTML);
+       })
 
-  clearDisplay();
-  appendNumber(result);
-  previousNumber = result.toString();
-};
+       var three=document.querySelector('.yellow');
 
-const handleButtonClick = (event) => {
-  const buttonText = event.target.innerText;
+       three.addEventListener('click',function(){
+        alert(three.innerHTML);
+       })
 
-  if (buttonText === 'C') {
-    clearDisplay();
-    return;
-  }
+       var four=document.querySelector('.black');
 
-  if (buttonText === '+' || buttonText === '-' || buttonText === '*' || buttonText === '/') {
-    operation = buttonText;
-    previousNumber = currentNumber;
-    currentNumber = '';
-    return;
-  }
+       four.addEventListener('click',function(){
+        alert(four.innerHTML);
+       })
 
-  if (buttonText === '=') {
-    performOperation();
-    return;
-  }
+*/
+var spans=document.querySelectorAll('span');
 
-  appendNumber(buttonText);
-};
-
-buttons.forEach((button) => {
-  button.addEventListener('click', handleButtonClick);
+spans.forEach(function(event){
+    event.addEventListener('click',function(){
+        alert(event.innerHTML);
+       })
 });
 
 
-  </script>
+
+
+
+
+    </script>
+</body>
+</html>
