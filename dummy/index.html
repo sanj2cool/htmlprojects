@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Practice</title>
+
+    <style>
+
+        * {
+          padding:0;
+          margin:0;  
+        }
+
+        body {
+            background: #656565;
+            width:100vw;
+            height: 100vh;
+          display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            
+            
+        }
+        .contaniner {
+            width:400px;
+            height:0px;
+            background: #fff;
+            transition: all 1s;
+              
+    }
+    
+    .btn {
+        font-size:30px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+
+    <div class="contaniner">
+
+        <h2>data</h2>
+
+
+    </div>
+    
+    <div class="contaniner">
+
+        <h2>data</h2>
+
+
+    </div>
+    <div class="contaniner">
+
+        <h2>data</h2>
+
+
+    </div>
+    <div class="options">
+
+        <button data-clr="red" class="red  btn">Red</button>
+        <button data-clr="green" class="green btn">Green</button>
+        <button data-clr="yellow" class="yellow btn">Yellow</button>
+    </div>
+
+</div>
+   
+<script>
+    /*
+    var btnred=document.querySelector('.red');
+    btnred.addEventListener('click',function(){
+        document.querySelector('.contaniner').style.background='red';
+        document.querySelector('.contaniner').style.height='400px';
+    });
+    */
+
+    var btns=document.querySelectorAll('.btn');
+
+    btns.forEach( function(ar){
+
+        ar.addEventListener('click',function(){
+           let clr= ar.getAttribute('data-clr');
+           document.querySelector('.contaniner').style.background=clr;
+        document.querySelector('.contaniner').style.height='400px';
+        });
+    })
+
+</script>
+    
+</body>
+</html>
