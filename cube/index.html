@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube using HTML and CSS</title>
+    <style>
+
+        * {
+            margin:0;
+            padding:0;
+            
+        }
+
+        body {
+            width:100vw;
+            height:100vh;
+            
+        }
+
+        .container {
+
+            width:500px;
+            height:500px;
+            background: linear-gradient(rgba(255, 255, 255, 0.295),rgba(130, 125, 125, 0.128) 20%,#0000 90%,#0005),
+            linear-gradient(90deg, #777,#333 5%,#ccc 33%,#666 48% 52%,#fff 66% 75%,#555 90% 95%,#ccc);
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(20deg) rotateY(30deg);
+                       
+        }
+        span {
+            width:200px;
+            height:200px;
+            background: #fff;
+            display: block;
+            position: absolute;
+            transform-style: preserve-3d;
+            
+        }
+
+        span:first-child {
+            background: red;
+            z-index: 99;
+            transform: rotateY(90deg);
+            
+        }
+        span:nth-child(1) {
+            background: rgb(253, 249, 6);
+            z-index: 99;
+            transform: rotateY(360deg) translateZ(100px);
+            
+        }
+        span:nth-child(2) {
+            background: rgb(92, 3, 245);
+            z-index: 99;
+            transform: rotateY(180deg) translateZ(100px);
+            
+        }
+        span:nth-child(3) {
+            background: rgb(40, 238, 5);
+            z-index: 99;
+            transform: rotateY(270deg) translateZ(100px);
+            
+        }
+        span:nth-child(4) {
+            background: rgb(244, 2, 107);
+            z-index: 99;
+            transform: rotateY(90deg) translateZ(100px);
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+    
+</body>
+</html>
