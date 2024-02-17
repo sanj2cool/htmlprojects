@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <style>
+        .tree {
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+
+
+            top: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            min-width: auto;
+            width: 100%;
+        }
+
+        .tree ul {
+            white-space: normal;
+        }
+
+        .tree li {
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+        }
+
+        .tree ul {
+            padding-top: 20px;
+            position: absolute;
+
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            transition: all 0.5s;
+            display: flex;
+            top: 50px;
+            width: 100%;
+            left: 0;
+        }
+
+        .tree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            transition: all 0.5s;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tree li::before,
+        .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%;
+            height: 45px;
+            z-index: -1;
+        }
+
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #ccc;
+        }
+
+        .tree li:only-child::after,
+        .tree li:only-child::before {
+            display: none;
+        }
+
+        .tree li:only-child {
+            padding-top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px
+        }
+
+        .tree li:first-child::before,
+        .tree li:last-child::after {
+            border: 0 none;
+        }
+
+        .tree li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+
+            -webkit-transform: translateX(1px);
+            -moz-transform: translateX(1px);
+            transform: translateX(1px);
+
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+            border-radius: 0 5px 0 0;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 32px;
+            z-index: -1;
+        }
+
+        .tree li a {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-family: arial, verdana, tahoma;
+            font-size: 16px;
+            display: inline-block;
+            background: #6CA443;
+
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .tree li a.supruznik-link {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-family: arial, verdana, tahoma;
+            font-size: 16px;
+            display: inline-block;
+            background: #a32160;
+
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            transition: all 0.5s;
+            position: relative;
+        }
+
+        .tree li a+a {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .heart {
+            color: #ff69b4;
+            font-size: 16px;
+            margin: 0 5px;
+        }
+
+        .tree li a+a::before {
+            content: '';
+            position: absolute;
+            border-top: 1px solid #ccc;
+            top: 50%;
+            left: -21px;
+            width: 20px;
+        }
+
+        .parentss {
+
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .parentss.mm {
+            position: relative;
+        }
+    </style>
+    <ul class='tree'>
+        <li class='person'>
+               <div class='parentss ss'><a class='supruznik-link' href='#'>Kacusa Ognjenovic</a><span
+                    class='heart'>&#10084;</span>
+                
+                <div class='parentss'><a href='#' onclick='Pregledkorisnika(2)'>Tomislav Perisic</a></div>
+                <span class='heart'>&#10084;</span><a class='supruznik-link' href='#'>Nema Je</a>
+                </div>
+                <ul class='children'>
+                    <li class='person'>
+                        <div class='parentss ss'><a href='#' onclick='Pregledkorisnika(3)'>Petar Perisic</a><span
+                                class='heart'>&#10084;</span>
+                        <a class='supruznik-link' href='#'>Svetlana Perisic</a>
+                        </div>
+                        <ul class='children'>
+                            <li class='person'>
+                                <div class='parentss mm'><a class='supruznik-link' href='#'>Marija Marija</a><span
+                                        class='heart'>&#10084;</span>
+                                    <ul class='children'>
+                                        <li class='person'>
+                                            <div class='parentss'><a href='#' onclick='Pregledkorisnika(7)'>Nikola
+                                                    Perisic</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class='parentss'><a href='#' onclick='Pregledkorisnika(6)'>Rastko Perisic</a></div>
+                                <div class='parentss mm'><span class='heart'>&#10084;</span>
+                                    <ul class='children'>
+                                        <li class='person'>
+                                            <div class='parentss'><a href='#' onclick='Pregledkorisnika(8)'>Nemanja
+                                                    Perisic</a></div>
+                                        </li>
+                                    </ul><a class='supruznik-link' href='#'>Milena Milic</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='person'>
+                        <div class='parentss'><a href='#' onclick='Pregledkorisnika(4)'>Sreten Perisic</a></div>
+                    </li>
+                </ul>
+            
+        </li>
+    </ul>
+
+</body>
+
+</html>

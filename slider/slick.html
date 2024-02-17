@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+    <style>
+
+
+        :root {
+    --arrow-font-size: 30px;
+    --arrow-color: #000000;
+    --arrow-color-lightbox: #ffffff;
+}
+
+.XXXXX__slide img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.slick-slider:not(.hero__slider) .slick-prev + .slick-list .slick-slide {
+    padding: 0 35px;
+}
+
+.slick-slider:not(.hero__slider) .slick-prev:before,
+.slick-slider:not(.hero__slider) .slick-next:before {
+    font-size: var(--arrow-font-size);
+    color: var(--arrow-color);
+}
+
+.slick-lightbox .slick-slider:not(.hero__slider) .slick-prev:before,
+.slick-lightbox .slick-slider:not(.hero__slider) .slick-next:before {
+    color: var(--arrow-color-lightbox);
+}
+
+.slick-slider:not(.hero__slider) .slick-prev,
+.slick-slider:not(.hero__slider) .slick-next {
+    height: initial;
+    width: initial;
+    z-index: 4;
+}
+
+.slick-slider:not(.hero__slider) .slick-prev {
+    left: 0;
+}
+
+.slick-slider:not(.hero__slider) .slick-next {
+    right: 0;
+}
+
+.slick-lightbox .slick-slider:not(.hero__slider) .slick-prev {
+    left: 15px;
+}
+
+.slick-lightbox .slick-slider:not(.hero__slider) .slick-next {
+    right: 15px;
+}
+
+@media only screen and (min-width: 1600px) {
+    .slick-slider:not(.hero__slider) .slick-prev + .slick-list .slick-slide {
+        padding: 0;
+    }
+
+    .slick-slider:not(.hero__slider) .slick-prev {
+        left: unset;
+        right: calc(100% + 30px);
+    }
+
+    .slick-slider:not(.hero__slider) .slick-next {
+        left: calc(100% + 30px);
+        right: unset;
+    }
+}
+
+    .slick-lightbox .slick-slider:not(.hero__slider) .slick-prev {
+        left: 30px;
+        right: unset;
+    }
+
+    .slick-lightbox .slick-slider:not(.hero__slider) .slick-next {
+        right: 30px;
+        left: unset;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="example-container">
+
+        <!-- XXXXX -->
+        <section class="XXXXX">
+            <div class="XXXXX__slider">
+                <a href="https://unsplash.it/600.jpg?image=251" class="XXXXX__slide" data-toggle="lightbox">
+                    <img src="https://unsplash.it/600.jpg?image=251">
+                </a>
+                <a href="https://unsplash.it/600.jpg?image=252" class="XXXXX__slide" data-toggle="lightbox">
+                    <img src="https://unsplash.it/600.jpg?image=252">
+                </a>
+                <a href="https://unsplash.it/600.jpg?image=253" class="XXXXX__slide" data-toggle="lightbox">
+                    <img src="https://unsplash.it/600.jpg?image=253">
+                </a>
+            </div>
+        </section>
+        <!-- /XXXXX -->
+    
+    </div>
+
+    <div id="gallery" class="photos-grid-container gallery">
+        <div class="main-photo img-box">
+          <a href="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=1200&&q=80" class="glightbox" data-glightbox="type: image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&h=1800&&q=80" alt="image" /></a>
+        </div>
+        <div>
+          <div class="sub">
+            <div class="img-box"><a href="https://images.unsplash.com/photo-1588186941799-f9a4fc54ff1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&h=1200&q=80" class="glightbox" data-glightbox="type: image"><img src="https://images.unsplash.com/photo-1588186941799-f9a4fc54ff1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&h=900&q=80" alt="image" /></a></div>
+            <div class="img-box"><a href="https://images.unsplash.com/photo-1593409981958-562665d407cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&h=1200&q=80" class="glightbox" data-glightbox="type: image"><img src="https://images.unsplash.com/photo-1593409981958-562665d407cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&h=900&q=60" alt="image" /></a></div>
+            <div class="img-box"><a href="https://images.unsplash.com/photo-1587538639284-aec1076ba9c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&h=1200&q=80" class="glightbox" data-glightbox="type: image"><img src="https://images.unsplash.com/photo-1587538639284-aec1076ba9c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&h=900&q=60" alt="image" /></a></div>
+            <div id="multi-link" class="img-box">
+              <a href="https://images.unsplash.com/photo-1591557304122-513e396f9feb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&h=1200&q=80" class="glightbox" data-glightbox="type: image">
+                <img src="https://images.unsplash.com/photo-1591557304122-513e396f9feb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&h=900&q=80" alt="image" />
+                <div class="transparent-box">
+                  <div class="caption">
+                    +3
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="more-img" class="extra-images-container hide-element">
+          <a href="https://images.unsplash.com/photo-1523450001312-faa4e2e37f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODF8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&h=1200&q=80" class="glightbox" data-glightbox="type: image"><img src="https://images.unsplash.com/photo-1523450001312-faa4e2e37f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODF8fHdvbWVuJTIwc2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&h=900&q=60" alt="image" /></a>
+          <a href="https://images.unsplash.com/photo-1484081064812-86e90e107fa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ4fHx3b21lbiUyMHNob3BwaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&h=1200&q=80" class="glightbox" data-glightbox="type: image"><img src="https://images.unsplash.com/photo-1484081064812-86e90e107fa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ4fHx3b21lbiUyMHNob3BwaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&h=900&q=60" alt="image" /></a>
+          <a href="https://images.unsplash.com/photo-1466695108335-44674aa2058b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=1200&q=80" class="glightbox" data-glightbox="type: image"><img src="https://images.unsplash.com/photo-1466695108335-44674aa2058b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&h=900&q=80" alt="image" /></a>
+  
+        </div>
+      </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://mreq.github.io/slick-lightbox/dist/slick-lightbox.js"></script>
+<script>
+    $(".XXXXX__slider").slick({});
+
+    $("#gallery").slick({});
+
+
+</script>
+</html>
