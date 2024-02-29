@@ -162,6 +162,15 @@
         display: none;
         transition: all 4s;
     }
+
+    .add-task-form .close {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        position:absolute;
+        right:0;
+
+    }
     </style>
 </head>
 <body>
@@ -239,7 +248,9 @@
 
 
             <div class="add-task-form">
-
+                <div class="close">
+                    <i class="fa-solid fa-rectangle-xmark"></i>
+                </div>
 
             </div>
         </div>
@@ -250,12 +261,20 @@
 
         var addtask=document.querySelector('.add-task');
         var taskform=document.querySelector('.add-task-form');
+        var popclose=document.querySelector('.add-task-form .close i');
         addtask.addEventListener('click',function(e){
 
             taskform.style.display='block';
             taskform.style.height='400px';
             
-        })
+        });
+
+        popclose.addEventListener('click',function(e){
+
+taskform.style.display='none';
+taskform.style.height='0px';
+
+});
 
 
     </script>
