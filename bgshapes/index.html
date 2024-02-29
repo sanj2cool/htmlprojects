@@ -131,35 +131,36 @@
         height:100%;
         
     }
-    .bottom-nav-inner::before {
-        content: "\2b";
-    width: 50px;
-    height: 50px;
-    background: #fff;
-    display: block;
-    position: absolute;
-    line-height: 50px;
-    font-size: 39px;
-    font-weight: bolder;
-    text-align: center;
-    border-radius: 50%;
-    left: calc(50% - 25px);
-    top: -25px;
-    box-shadow: 0px 0px 6px #6e7475;
-    }
+    
 
     .add-task {
-        width: 100%;
-    height: 300px;
-    background: red;
-    display: none;
-    transition: all 3s;
-    position: absolute;
-    top: 0;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        line-height: 50px;
+        font-size: 39px;
+        font-weight: bolder;
+        text-align: center;
+        border-radius: 50%;
+        left: calc(50% - 25px);
+        top: -25px;
+        box-shadow: 0px 0px 6px #6e7475;
     }
 
     .bottom-nav-inner:hover::before ~ .add-task {
        display: block;
+    }
+
+    .add-task-form {
+        width:100%;
+        height:0px;
+        background: red;
+        position: absolute;
+        top:0;
+        display: none;
+        transition: all 4s;
     }
     </style>
 </head>
@@ -228,19 +229,35 @@
             <div class="bottom-nav">
 
                 <div class="bottom-nav-inner">
-                    <div class="add-task">
-
-
-                    </div>
+                    
                     <div class="nav left"></div>
+                    <div style="transition: all 5s ease 0s;" class="add-task"><i class="fa-solid fa-plus"></i></div>
                     <div class="nav right"></div>
                 </div>
                 
+            </div>
+
+
+            <div class="add-task-form">
+
+
             </div>
         </div>
 
 
     </div>
-    
+    <script>
+
+        var addtask=document.querySelector('.add-task');
+        var taskform=document.querySelector('.add-task-form');
+        addtask.addEventListener('click',function(e){
+
+            taskform.style.display='block';
+            taskform.style.height='400px';
+            
+        })
+
+
+    </script>
 </body>
 </html>
