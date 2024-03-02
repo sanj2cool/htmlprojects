@@ -94,6 +94,8 @@
     .task-list {
         width:100%;
         padding:20px;
+        height:300px;
+        overflow: scroll;
     }
 
     .task-list-card {
@@ -153,6 +155,14 @@
        display: block;
     }
 
+    .add-task-form.show {
+        width:100%;
+        height:400px;
+               
+        display: block !important;
+        
+    }
+
     .add-task-form {
         width:100%;
         height:0px;
@@ -163,6 +173,7 @@
         display: none;
         transition: all 4s;
     }
+    
 
     .add-task-form .close {
         width: 50px;
@@ -206,10 +217,11 @@
                     
                 </div>
             </div> <!-- category card div-->
-            <div class="task-list">
-                <div class="task-list-heading mb-20">
+            <div class="task-heading mb-20">
                 <h2>In Progress <span>10</span></h2>
                 </div>
+            <div class="task-list">
+               
                 <div class="task-list-card">
                     <div class="task-content">
                         <h4>Create Blog Post</h4>
@@ -253,6 +265,15 @@
                     <i class="fa-solid fa-rectangle-xmark"></i>
                 </div>
 
+                <div class="form-data">
+                    <p><strong>Task Title: </strong></p>
+                    <p><input type="text" placeholder="Task Title" id="task-title"></p> 
+                    <p><strong>Task Category : </strong></p>
+                    <p><input type="text" placeholder="Task Category" id="task-cat"></p>
+                    <p><input type="button" value="Save" id="add-task"></p>
+
+                </div>
+
             </div>
         </div>
 
@@ -263,19 +284,65 @@
         var addtask=document.querySelector('.add-task');
         var taskform=document.querySelector('.add-task-form');
         var popclose=document.querySelector('.add-task-form .close i');
+        var savbtn=document.querySelector('#add-task');
         addtask.addEventListener('click',function(e){
-
-            taskform.style.display='block';
-            taskform.style.height='400px';
+           
+            taskform.classList.add('show');
+            taskform.style.transition="all 3s ease 10s";
+           
             
         });
+        var tasks=[]
+        var dta=JSON.parse(localStorage.getItem('title'));
+
+        if(dta !== null){
+            var list="";
+            dta.forEach(element => {
+               list+=`<div class="task-list-card">
+                    <div class="task-content">
+                        <h4>${element}</h4>
+                        <span>2 hrs remains</span>
+                    </div>
+                    <div class="task-progress">
+                        <span>80%</span>
+                    </div>
+                </div>`;
+            });
+            document.querySelector('.task-list').innerHTML=list;
+        }
 
         popclose.addEventListener('click',function(e){
+            taskform.classList.remove('show');
+          });
+          
+          
+          var mt=[]
+          mt.push({'title':'mytitle','cat':'webdesign'})
+          console.log(mt)
+           
+          //var tasks=[];
+          savbtn.addEventListener('click',function(){
+            let title=document.querySelector('#task-title').value;
+            let cate=document.querySelector('#task-cat').value;
 
-taskform.style.display='none';
-taskform.style.height='0px';
+           
+           
+            // Check if tasks is undefined or null before accessing its length
+                if (!tasks) {
+                    tasks = [];
+                }else {
+                    tasks=dta;
+                }
 
-});
+                // Use push to add an element to the end of the array
+                tasks.push({'title':title,'cate':cate});
+
+            localStorage.setItem('title',JSON.stringify(tasks));
+
+            
+
+
+          });
 
 
     </script>
