@@ -78,8 +78,9 @@ function submitForm() {
 
 window.addEventListener("load", (event) => {
 
-    
-    
+    var cats=['Web Design','Graphic', 'SEO','Data Entry']
+    //create category if not added 
+    localStorage.setItem('task_categories',JSON.stringify(cats))
     // create a function to fetch Projects
     var categories = JSON.parse(localStorage.getItem('task_categories'))
     
