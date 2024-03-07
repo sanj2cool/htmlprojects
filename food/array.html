@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <STYLE>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width:100%;
+            height:100vh;
+            justify-content: center;
+            display: flex;
+            
+        }
+
+        .container {
+            width: 282px;
+            min-height: 600px;
+            margin: auto;
+            background: #f4f4f4;
+            padding: 15px;
+            padding-top: 50px;
+            border-radius: 15px;
+        }
+
+        .images {
+            width: 250px;
+            height: 250px;
+            background: #f5b133;
+            border-radius: 50%;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 240px;
+                height: 240px;
+                background: #fff;
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &::after {
+                content: "";
+                width: 220px;
+                height: 220px;
+                background: #f5b133;
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                animation: csscale 1s ease-in-out;
+                animation-delay: 4s;
+                transition-delay: 4s;
+            }
+
+
+        }
+
+        @keyframes csscale {
+            from {
+                width: 200px;
+                height: 200px;
+                transition-delay: 4s;
+            }
+
+            to {
+                width: 230px;
+                height: 230px;
+                transition-delay: 4s;
+            }
+        }
+
+        .images img {
+            position: absolute;
+            z-index: 5;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 1s;
+            scale: 1;
+            transition: all 5s;
+            animation: movegirl 2s ease-in;
+            animation-iteration-count: 1;
+
+        }
+
+        @keyframes movegirl {
+            from {
+                bottom: 0px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 50px;
+                opacity: 1;
+            }
+        }
+
+        .name {
+            width: 80%;
+            height: 70px;
+            background: #fff;
+            position: absolute;
+            bottom: -12px;
+            z-index: 888;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px #07070759;
+
+            & h2 {
+                color: #f5b133;
+
+                animation: increasesize 1s ease-in;
+                animation-delay: 4s;
+            }
+
+            & p {
+                text-transform: uppercase;
+            }
+        }
+
+        @keyframes increasesize {
+            from {
+                font-size: 0px;
+            }
+
+            to {
+                font-size: 98x;
+            }
+        }
+
+        .heading-section {
+            padding-top: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+
+            & h2 {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            & span {
+                color: #f5b133;
+            }
+
+            & p {
+                text-align: justify;
+            }
+
+            & button {
+                padding: 15px;
+    background: #f5b133;
+    border-radius: 15px;
+    width: 66%;
+    border: none;
+    box-shadow: 0px 0px 26px #8b8484;
+            }
+        }
+    </STYLE>
+</head>
+
+<body>
+    <div class="container">
+        <div class="images">
+            <img src="images/girl.png" alt="">
+
+            <div class="name">
+                <h2>CFC CAFE</h2>
+                <p>restaurants</p>
+            </div>
+        </div>
+        <div class="heading-section">
+            <h2>Enjoy the best <span>food</span> with <br>us...</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum mollitia blanditiis maxime earum deserunt
+                quibusdam numquam, quos tempora. Magnam placeat. </p>
+            <button>Get Started </button>
+        </div>
+    </div>
+    <script>
+
+        // Array is a collection of data 
+        // Array can store different type of data it can store string , integer , array , object
+        // Each value in array in defined by index no or key 
+
+
+
+        ar = ['myname', 45, Array('testing', 'ary2'), ['fsdfs', 'fsfsa']]
+        console.log(ar);
+
+        at = ('sdfsdf', ['fsdfsa', 'uuuu'])
+
+        console.log(at)
+
+    </script>
+
+</body>
+
+</html>
