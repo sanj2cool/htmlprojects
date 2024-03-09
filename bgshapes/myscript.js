@@ -113,8 +113,33 @@ window.addEventListener("load", (event) => {
      * Get and Validate Form Data 
      * 
     */
+    var task_title=document.querySelector('#title');
+    var project=document.querySelector('#projects');
+    var taskdesc=document.querySelector('#description');
+    var asignuser=document.querySelector('#assign');
+    var due_date=document.querySelector('#due-date');
+    var save_task=document.querySelector('.save-button');
+    // check if task list is created
+    var alltask = JSON.parse(localStorage.getItem('all_task'))
 
-    
+    if(!alltask) {
+        alltask=[];
+    }
+
+    save_task.addEventListener('click',function(){
+        console.log(alltask);
+    let task={'title':task_title.value, 'project':project.value,'user':asignuser.value,'due_date':due_date.value,'description':taskdesc.value  }
+        alltask.push(task)
+
+        localStorage.setItem('all_task',JSON.stringify(alltask));
+        
+    });
+
+
+   
+    dt=alltask.filter(function(ele){ return ele.project=='SEO'});
+
+        console.log(dt)
 
 
   });
